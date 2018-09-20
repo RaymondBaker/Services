@@ -1,0 +1,27 @@
+{
+  "name": "services",
+  "version": "1.0.0",
+  "description": "Access to server utils",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "webpack",
+    "build-scss": "node-sass --include-path scss scss/mini/src/flavors/mini-default.scss static/css/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raymond Baker",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.3.9",
+    "node-sass": "^4.9.3",
+    "ts-loader": "^5.1.1",
+    "typescript": "^3.0.3",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "mini.css": "^3.0.0"
+  }
+}

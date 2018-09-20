@@ -1,0 +1,15 @@
+---
+name: services
+cro: 1
+id: services
+env:  []
+links:  []
+entrypoint: service.p6
+endpoints: 
+  - 
+    port-env: SERVICES_PORT
+    name: HTTP
+    protocol: http
+    host-env: SERVICES_HOST
+    id: http
+...

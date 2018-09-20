@@ -6,6 +6,9 @@ enum Music_Command {
     PAUSE_PLAY,
 }
 
+// Get info on load
+$(function(){update_song_info()});
+
 $(document).ready(function() {
     $("#prev_btn").click(function() {
         change_song(Music_Command.PREV);
@@ -25,12 +28,15 @@ $(document).ready(function() {
 
 function update_song_info()
 {
-    let info = $.ajax({
+    $.ajax({
         type:"GET",
-        url: "/sound_system/sound_control_current_playing"
+        url: "/sound_system/sound_control_current_playing",
+        dataType: 'json',
+        success: function(info){
+            $("#song_name_lbl").text(`${info.title}`);
+            $("#song_artist_lbl").text(`${info.artist}`);
+        }
     });
-    console.log(info);
-    $("#song_name_l").text("next");
 }
 
 function change_song(control: Music_Command) : boolean {
